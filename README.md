@@ -111,4 +111,4 @@ Feature importance for Phishing URL Detection
 2. Backend Implementation: The application uses Django for the backend, providing a secure and responsive web interface for users.
 3. Accuracy and Performance: The model demonstrates strong predictive performance, effectively identifying phishing attempts even as attackers evolve their techniques. 
 4. Scalability and Flexibility: The combination of machine learning and web technologies allows for future expansion, including integration with larger security platforms or real-time monitoring systems.
-5.Practical Impact: This project highlights how machine learning can be applied to improve cybersecurity, offering a practical tool to reduce online threats.
+5. Practical Impact: This project highlights how machine learning can be applied to improve cybersecurity, offering a practical tool to reduce online threats.
