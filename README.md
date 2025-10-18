@@ -6,6 +6,7 @@
   * [Introduction](#introduction)
   * [Installation](#installation)
   * [Directory Tree](#directory-tree)
+  * [Technologies Used](#Technologies Used)
   * [Result](#result)
   * [Conclusion](#conclusion)
 
@@ -74,7 +75,7 @@ pip install -r requirements.txt
 
 ```
 
-## 🛠️ Technologies Used  
+## Technologies Used  
 
 ![](https://forthebadge.com/images/badges/made-with-python.svg)  
 

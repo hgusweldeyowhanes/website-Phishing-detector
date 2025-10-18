@@ -4,25 +4,17 @@ import os
 from urllib.parse import urlparse
 import pandas as pd
 
-# Base directory of this file
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Paths to model and feature names
 MODEL_PATH = os.path.join(BASE_DIR, "phishing_rf_model.joblib")
 FEATURES_PATH = os.path.join(BASE_DIR, "feature_names.json")
 
-# Load model
 model = joblib.load(MODEL_PATH)
 
-# Load feature names in correct order
 with open(FEATURES_PATH) as f:
     feature_names = json.load(f)["feature_names"]
 
 def extract_features_from_url(url):
-    """
-    Extract the 5 features required by the trained model.
-    Placeholder features (AnchorURL, WebsiteTraffic) are set to 0.
-    """
     parsed = urlparse(url)
     netloc = parsed.netloc or parsed.path
     path = parsed.path or ''
@@ -41,7 +33,6 @@ def extract_features_from_url(url):
 
     }
 
-    # Return features in the exact order required by the model
     return [features[name] for name in feature_names]
 
 
@@ -51,9 +42,7 @@ def predict_url(url):
     """
     features_vector = [extract_features_from_url(url)]
     df = pd.DataFrame(features_vector, columns=feature_names)
-      # Get probabilities
-    proba = model.predict_proba(df)[0]  # returns [prob_legitimate, prob_phishing]
-
+    proba = model.predict_proba(df)[0] 
     percent_legit = round(proba[0] * 100, 2)
     percent_phish = round(proba[1] * 100, 2)
 
